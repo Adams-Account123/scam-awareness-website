@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.ifaketextmessage.com/theme/styles/style-005.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden !important;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: #f0f0f0;
+            padding-top: 0px;
+        }
+
+        .content.homepage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phoneWrapper {
+            transform: scale(0.85);
+            transform-origin: center top;
+        }
+
+        .phone .body {
+            padding-bottom: 0 !important;
+        }
+
+        .phone .footer {
+            margin-top: -10px !important;
+            padding-top: 0 !important;
+        }
+
+        .phoneSmall .phone .body {
+            padding-bottom: 0 !important;
+        }
+
+        .phoneSmall .phone .footer {
+            margin-top: -80px !important;
+            padding-top: 0 !important;
+        }
+
+
+        #userInput {
+            width: 80%;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content homepage">
+        <div class="phoneWrapper phoneSmall">
+            <div class="phone" id="phone">
+                <div class="header">
+                    <div class="statusBar">
+                        <div class="connectionWrapper">
+                            <div class="bars"></div>
+                            <div class="network">SCAMINC</div>
+                            <div class="connection"><img src="https://ifaketextmessage.com/images/icon_wifi.png" class="icon-wifi"></div>
+                        </div>
+                        <div class="icons">
+                            <div class="battery"><img src="https://ifaketextmessage.com//images/icon_battery.png" alt="">
+                                <div class="juice" style="width: 30px; background-color: rgb(0, 0, 0);"></div>
+                            </div>
+                            <div class="percent">100%</div>
+                        </div>
+                        <div class="time">4:09 PM</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="titleBar">
+                        <img class="headerButtons" src="https://ifaketextmessage.com/images/headerButtons.png" alt="">
+                        <div class="name"><span class="nameWrap" id="name">Scammer</span></div>
+                        <div class="blackout" style="display: none;"></div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="bubbleWrap" id="bubble-0" style="top: 0px; display: block; opacity: 1;">
+                        <div class="bubble grey"><span>United States Federal Department of Vehicles (DMV) Final Notice: Enforcement penalties begin in 30 days. To avoid penalties please reply to this message.</span>
+                            <div class="corner"></div>
+                        </div>
+                    </div>
+                    <div class="bubbleWrap" id="bubble-1" style="top: 0px; display: none; opacity: 1;">
+                        <div class="bubble blue"><span>Okay1</span>
+                            <div class="corner"></div>
+                        </div>
+                    </div>
+                    <div class="bubbleWrap" id="bubble-2" style="top: 0px; display: block;">
+                    </div>
+                    <div class="bubbleWrap" id="bubble-4" style="top: 0px; display: none;">
+                        <div class="bubble grey"><span>Thank you for contacting the United States Federal Department of Vehicles (DMV). To get rid of all current outstanding penalties please contact the provided number:<br><span style="color: #007aff;">(999) 111-SCAM</span>
+                            <div class="corner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="camera"><img src="https://ifaketextmessage.com/images/icon_camera.png" class="icon-camera" alt=""></div>
+                    <div class="messageArea">
+                        <input type="text" id="userInput" placeholder="iMessage">
+                    </div>
+                    <div class="sendButton"><img src="https://ifaketextmessage.com/images/icon_mic.png" class="icon-mic"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const input = document.getElementById('userInput');
+        const bubble1 = document.getElementById('bubble-1');
+        const bubble4 = document.getElementById('bubble-4');
+        const span1 = bubble1.querySelector('.bubble.blue span');
+        let hasEntered = false; 
+
+        input.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && !hasEntered) {
+                const value = input.value.trim();
+                if (value !== '') {
+                    hasEntered = true; 
+                    span1.textContent = value; 
+                    bubble1.style.display = 'block'; 
+                    input.value = ''; 
+                    input.disabled = true;
+                    input.placeholder = 'You have reached your typing limit ;('; 
+
+                    setTimeout(() => {
+                        bubble4.style.display = 'block';
+                    }, 1000);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
